@@ -1,0 +1,282 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    </head>
+    <style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.Section_top{
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+			position: relative;
+			background-image: url({% static 'img1.jpg' %});
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			text-align: center;
+			justify-content: center;
+			animation: change 10s infinite ease-in-out;
+		}
+		
+		@keyframes change{
+			0%
+			{
+				background-image: url({% static 'img1.jpg' %});
+			}
+			20%
+			{
+				background-image: url({% static 'img2.jpg' %});
+			}
+			40%
+			{
+				background-image: url({% static 'img3.jpg' %});
+			}
+			60%
+			{
+				background-image: url({% static 'img4.jpg' %});
+			}
+			80%
+			{
+				background-image: url({% static 'image.jpg' %});
+			}
+			100%
+			{
+				background-image: url({% static 'img1.jpg' %});
+			}
+		}
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      #nav {
+        list-style-type: none;
+        margin-top: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+      }
+      h2 {
+        color: #070707;
+      }
+
+      .li {
+        float: left;
+      }
+
+      .li a {
+        display: block;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #393f4d;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+	  #preloader{
+		background: black;
+		height: 100%;
+		width: 100%;
+		position:fixed;
+		z-index: 2000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: opacity 0.5s ease-in-out;
+		
+	  }
+	  .preload-finish {
+		opacity: 0;
+		pointer-events: none;
+		transition-delay: 2s;
+	  
+	  }
+
+      .form-style button {
+        width: 89%;
+        height: 70%;
+        padding: 5%;
+        background: #ffffff;
+        border-bottom: 2px solid #393f4d;
+        border-top-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: #000000;
+        font-weight: bold;
+        font-size: 28px;
+        font-family: "Times New Roman";
+      }
+
+      .form-style button:hover {
+        background-color: #393f4d;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .form-style {
+        font: 95% Arial, Helvetica, sans-serif;
+        max-width: 400px;
+        margin: 300px auto;
+        padding: 16px;
+		transform: translateY(-50%);
+		padding: 70px 36px ;
+		background:linear-gradient(to top left, #ffffffff #ffffff09 ); 
+		backdrop-filter:blur(10px);
+		border-radius: 10px;
+		box-shadow: 2px 2px 5px  #feda6a; ;  
+		z-index: 2;
+      }
+      .form-style h1,
+      .form-style a {
+        padding: 46px 0;
+        font-size: 41px;
+        font-weight: bold;
+        font-family: "Times New Roman";
+        text-align: center;
+        margin: -78px -16px 6px -16px;
+        color: #feda6a;
+      }
+      .form-style input[type="text"],
+      .form-style input[type="password"],
+      .form-style input[type="date"],
+      .form-style input[type="datetime"],
+      .form-style input[type="email"],
+      .form-style input[type="number"],
+      .form-style input[type="search"],
+      .form-style input[type="time"],
+      .form-style input[type="url"],
+      .form-style textarea,
+      .form-style select {
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        outline: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 4%;
+        padding: 3%;
+        color: #0000a0;
+		border: 2px solid rgb(162, 160, 160);
+		border-color: #088450;
+		font-weight: 200;
+		border-radius: 5px;
+        font: 95% Arial, Helvetica, sans-serif;
+      }
+      .form-style input[type="text"]:focus,
+      .form-style input[type="password"]:focus,
+      .form-style input[type="date"]:focus,
+      .form-style input[type="datetime"]:focus,
+      .form-style input[type="email"]:focus,
+      .form-style input[type="number"]:focus,
+      .form-style input[type="search"]:focus,
+      .form-style input[type="time"]:focus,
+      .form-style input[type="url"]:focus,
+      .form-style textarea:focus,
+      .form-style select:focus {
+        box-shadow: 0 0 5px #0000a0;
+        padding: 3%;
+        border: 1px solid #0000a0;
+      }
+
+      .site-form span,
+      label {
+        color: #feda6a;
+		font-size: 18px;
+      }
+      .errorlist {
+        color: red;
+        font-weight: bold;
+      }
+
+      .submit {
+        border: 1px solid #393f4d;
+        height: 42px;
+        width: 160px;
+        text-align: center;
+        background-color: #feda6a;
+		border-radius: 5px;
+        color: #393f4d;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: "Times New Roman";
+        vertical-align: top;
+      }
+      .submit:hover {
+        background-color: #ffffff;
+        color: #feda6a;
+        font-weight: bold;
+      }
+    </style>
+	<script>
+		window.addEventListener('load', () => {
+		  const preload = document.getElementById('preloader');
+		  setTimeout( function() {
+			  preload.classList.add('preload-finish');
+		  }, 1000 );
+		});
+	  </script>
+	<div style="background-color:#050505;color:#ffffff;padding:10 10 1 10;border: 1px  groove;margin-bottom:0;">
+
+		<h1 align=center>Voice to Visual ISL Converter</h1>
+		</div>
+		<body>
+		<div id="preloader"><img src="{% static '4---final.gif' %}" alt=""></div>
+		
+		<div class = "Section_top">
+			<div class = "details">
+				<ul id="nav">
+					<li class="li"><a class="active" href="{% url 'home' %}">Home</a></li>
+					<li class="li"><a href="{% url 'animation' %}">Convertor</a></li>
+					{% if not user.is_authenticated %}
+					<li class="li"><a href="{% url 'signup' %}">Sign Up</a></li>
+					{% endif %}
+					{% if user.is_authenticated %}
+					<li class="li"><a href="{% url 'logout' %}">Log-Out</a></li>
+					{% else %}
+					  <li class="li"><a href="{% url 'login' %}">Log-in</a></li>
+					{% endif %}
+					<li class="li"><a href="{% url 'contact' %}">Contact</a></li>
+					<li class="li"><a href="{% url 'about' %}">About</a></li>
+				  </ul>
+				  
+				  <div class="wrapper" >
+			  {% block content %}
+			  <div class="form-style">
+				<h1>Login</h1>
+				<form class="site-form" action="." method="post">
+				  {% csrf_token %} {{ form }} {% if request.GET.next %}
+				  <input type="hidden" name="next" value="{{ request.GET.next }}" />
+				  {% endif %}
+				  <input class="submit" type="submit" value="Log in" />
+				</form>
+			  </div>
+			</div>
+		<div>
+	</body>
+    {% endblock %}
+  </html>
+</html>

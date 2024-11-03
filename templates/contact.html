@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h2>VERSION 1.0.0</h2>
+ 	<hr>
+ 	<h2>CONTACT US</h2>
+	<p class="td">For any queries regarding this website contact us on following:</p>
+	<p class="td">My Email ID: seshanj36@gmail.com</p>
+	<p class="td">Twitter handle: Seshan</p>
+	<p class="td">Contact number: +91 ********</p>
+ 	<hr>
+	 <div class="container mb-3 py-4">	
+	<form method="post" action="/contact">	
+	{% csrf_token %}
+	 <div class="form-group">
+		 <label for="name">Name</label>
+		 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+	 </div>
+
+	 <div class="form-group">
+		 <label for="email">Email address</label>
+		 <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+	 </div>
+	 
+	 <div class="form-group">
+		 <label for="phone">Phone Number</label>
+		 <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+	 </div>      
+	 
+	 <div class="form-group">
+		 <label for="desc">Tell me about what you want to contact me for...</label>
+		 <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+	 </div>
+	 <button class="btn btn-primary" type="submit">Submit</button>
+ </form>
+
+</div>
+	<p class="td">Thank you, For visiting our website</p>
+
+{% endblock %}

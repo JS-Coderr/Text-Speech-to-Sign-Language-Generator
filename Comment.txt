@@ -1,0 +1,4 @@
+Open CMD or Power Shell and type:
+download all libraries from path"A2SL\views.py"
+
+python manage.py runserver 8888

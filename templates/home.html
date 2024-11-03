@@ -1,0 +1,194 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	</head>
+
+<style>
+	body{
+		margin:0;
+		padding:0;
+		height: 100%;
+		
+	}
+
+	.Section_top{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		background-image: url({% static 'img1.jpg' %});
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: center;
+		justify-content: center;
+		animation: change 10s infinite ease-in-out;
+	}
+	
+	@keyframes change{
+		0%
+		{
+			background-image: url({% static 'img1.jpg' %});
+		}
+		20%
+		{
+			background-image: url({% static 'img2.jpg' %});
+		}
+		40%
+		{
+			background-image: url({% static 'img3.jpg' %});
+		}
+		60%
+		{
+			background-image: url({% static 'img4.jpg' %});
+		}
+		80%
+		{
+			background-image: url({% static 'image.jpg' %});
+		}
+		100%
+		{
+			background-image: url({% static 'img1.jpg' %});
+		}
+	}
+	h2
+	{
+		color: #070707;
+	}
+
+	#nav{
+		position: absolute; 
+		top: 0;        
+		left: 0;          
+		width: 100%;
+		list-style-type: none;
+		overflow: hidden;
+		display: flex;
+		padding: 10px;
+		font-family:Arial;
+
+	}
+	.nav_a:hover{
+		color:greenyellow;
+	}
+
+	.li{
+		list-style: none;
+		display: inline-block;
+		margin-left: 40px;
+	}
+	
+	.li a{
+		text-decoration: none;
+		color: #fff;
+		font-size: 24px;
+		letter-spacing: 1px;
+		font-weight: bold;
+	}
+	.li a::after{
+		content: "";
+		position:absolute;
+		background-color: #ff3c78;
+		height: 3px;
+		width: 0;
+		transition: 0.3s linear;
+		margin: auto;
+		display: block;
+		font-weight: bold;
+	}
+	.li a:hover::after{
+		width:5%;
+		font-weight: bold;
+	
+	}
+	.li a:hover{
+		color: greenyellow;
+	}
+	  
+
+	.content{
+		text-align: center;
+		margin-top: 70px;
+		padding: 20px;
+	}
+	.content h1{
+		font-size: 130px;
+		color:white;
+		font-weight: 600;
+		transition: 0.5s;
+	}
+	.content h1:hover{
+		-webkit-text-stroke: 2px #fff;
+		color:transparent;
+	}
+	
+	.content button{
+		font-size: 50px;
+		color:white;
+		font-weight: 400;
+		transition: 0.5s;
+	}
+	.content button:hover{
+		-webkit-text-stroke: 2px rgb(24, 248, 16);
+		color:transparent;
+	}
+	
+	.content a{
+		text-decoration: none;
+		display: inline-block;
+		color: #fff;
+		font-size: 24px;
+		border: 2px solid #fff;
+		padding: 14px 70px;
+		margin-top: 20px;
+		border-radius: 50px;
+	}
+
+	.trans{
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 10px 20px;
+		border-radius: 5px;
+		background-color:transparent;
+		color: white;
+
+	}
+</style>	
+{% block content %}
+<body>
+	<div class = "Section_top">
+		<div class = "details">
+				<ul id="nav">
+					<li class="li"><a class="active" href="{% url 'home' %}">Home</a></li>
+					<li class="li"><a href="{% url 'animation' %}">Convertor</a></li>
+					{% if not user.is_authenticated %}
+					<li class="li"><a href="{% url 'signup' %}">Sign Up</a></li>
+					{% endif %}
+					{% if user.is_authenticated %}
+					<li class="li"><a href="{% url 'logout' %}">Log-Out</a></li>
+					{% else %}
+					<li class="li"><a href="{% url 'login' %}">Log-in</a></li>
+					{% endif %}
+					<li class="li"><a href="{% url 'contact' %}">Contact</a></li>
+					<li class="li"><a href="{% url 'about' %}">About</a></li>
+				  </ul>
+				<div class="content">  
+						<h1>Welcome to <br>
+							Voice to Visual ISL Converter</h1>
+						<a href="{% url 'animation' %}" target="_blank"><button class="trans" >Click to Start</button></a>
+						<br>
+						<h4>.</h1>
+					</div>
+			</div>
+		</div>
+
+</body>
+{% endblock %}
