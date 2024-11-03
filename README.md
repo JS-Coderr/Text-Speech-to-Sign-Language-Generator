@@ -34,3 +34,10 @@ Sign Language Variation: Different regions and countries have unique sign langua
 Complex Phrasing: Translating idioms or complex language into sign language can be challenging due to syntactic differences.
 Technical Limitations: High-quality sign recognition and synthesis can be resource-intensive, requiring robust computational support, especially for real-time translation.
 A Text and Speech to Sign Language Translator has immense potential to foster inclusivity, especially as machine learning, ASR, and natural language processing techniques continue to improve. With ongoing development, it can play a critical role in making information accessible to all.
+
+# How To RUN the program:
+## use *Terminal* or *CMD* to install the Required Python Libraries using the code:
+'''bash
+# copy this code
+pip install django
+pip install nltk'''
