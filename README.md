@@ -37,8 +37,9 @@ A Text and Speech to Sign Language Translator has immense potential to foster in
 
 # How To RUN the program:
 1)use *Terminal* or *CMD* to install the Required Python Libraries using the code:
-*pip install django
-pip install nltk*
+
+*pip install django nltk*
 
 2)After installation first Run the File "Run.py" (Run it only Once for the Installation)
+
 3)Now Run the commands in "Comment.txt",In the download Directory Path type "CMD" in File Explorer on Windows
