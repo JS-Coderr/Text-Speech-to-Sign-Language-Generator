@@ -36,8 +36,10 @@ Technical Limitations: High-quality sign recognition and synthesis can be resour
 A Text and Speech to Sign Language Translator has immense potential to foster inclusivity, especially as machine learning, ASR, and natural language processing techniques continue to improve. With ongoing development, it can play a critical role in making information accessible to all.
 
 # How To RUN the program:
-## use *Terminal* or *CMD* to install the Required Python Libraries using the code:
-'''bash
-# copy this code
+1)use *Terminal* or *CMD* to install the Required Python Libraries using the code:
+*'''bash
 pip install django
-pip install nltk'''
+pip install nltk'''*
+
+2)After installation first Run the File "Run.py" (Run it only Once for the Installation)
+3)Now Run the commands in "Comment.txt",In the download Directory Path type "CMD" in File Explorer on Windows
